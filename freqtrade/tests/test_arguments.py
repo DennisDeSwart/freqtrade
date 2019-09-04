@@ -11,6 +11,8 @@ from freqtrade.configuration.cli_options import check_int_positive
 def test_parse_args_none() -> None:
     arguments = Arguments([], '')
     assert isinstance(arguments, Arguments)
+    x = arguments.get_parsed_arg()
+    assert isinstance(x, argparse.Namespace)
     assert isinstance(arguments.parser, argparse.ArgumentParser)
 
 
